@@ -6,9 +6,15 @@
 =end
 
 # We require the amount of dice to be 0 or a positive integer.
-dice = ARGV[0].to_i
-if dice < 0
+skill_level = ARGV[0].to_i
+if skill_level < 0
   puts "Please add the number of dice you roll. Input 0 for \"1d6 disadvantaged\""
+  exit
+end
+
+# No points in skill? 1dd
+if skill_level === 0
+  puts "You rolled #{rand(1..6) -1}"
   exit
 end
 
@@ -20,7 +26,7 @@ outcomes = Array.new
 ones = 0
 
 # For each die...
-dice.times do
+skill_level.times do
   # Roll 1..6
   result = rand(1..6)
   # Add it to the list of outcomes...
@@ -32,19 +38,11 @@ dice.times do
   end
 end
 
-# If there were no dice (0 in a skill)
-if dice === 0
-  # Always roll with disadvantage
-  advantage = -1
-  # Yep, roll and add it.
-  outcomes.push(rand(1..6))
-end
-
 # Tell them their highest roll, add the (dis)advantage to the end-result.
 puts "You rolled #{outcomes.max + advantage}."
 
 # If they rolled 2d6 or more...
-if dice > 1
+if skill_level > 1
   # And there were ones; tell them this!
   if ones === 1
     puts "You also rolled a 1!"

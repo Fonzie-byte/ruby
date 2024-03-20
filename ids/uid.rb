@@ -1,4 +1,4 @@
-require 'SecureRandom'
+require 'securerandom'
 
 # Time in hex, which is 8 characters.
 hex_time = Time.
