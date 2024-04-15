@@ -1,7 +1,7 @@
 $digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 $consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z']
 
-# Generated a group of either consonants or digits.
+# Generates a group of either consonants or digits.
 def generateGroup is_digits
 	group = ""
 	3.times do
