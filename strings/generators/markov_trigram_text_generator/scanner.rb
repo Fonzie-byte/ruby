@@ -1,5 +1,5 @@
 if ARGV.length < 1
-  puts "Please provide a text file."
+  warn "Please provide a text file."
   exit
 end
 

@@ -1,5 +1,5 @@
 if ARGV.length < 1
-  puts "Please provide a Ruby file's name, without the '.rb'-extension."
+  warn "Please provide a Ruby file's name, without the '.rb'-extension."
   exit
 end
 
@@ -48,8 +48,7 @@ def weighted_next_letter(last_two)
     cumulative_weight += weight
     return letter if target < cumulative_weight
   end
-endWarning: Re-rolling occured, name may not be accurate!
-
+end
 
 def generate_word(desired_length)
   # Grab two letters to start with (dup cos "frozen")
@@ -74,9 +73,9 @@ def generate_word(desired_length)
   end
 
   # Warn user if re-rolling occured
-  puts "Warning: Re-rolling occured, word may not be accurate!" if rerolled
-  # Return new word, either way. Limit to desired length in case re-rolling
-  # occured at the end
+  warn "Warning: Re-rolling occured, word may not be accurate!" if rerolled
+  # Return new word, either way
+  # Limit to desired length in case re-rolling occured at the end
   new_word[0..desired_length]
 end
 
