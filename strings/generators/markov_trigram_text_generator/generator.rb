@@ -1,5 +1,3 @@
-#!/usr/bin/ruby
-
 if ARGV.length < 1
   puts "Please provide a Ruby file's name, without the '.rb'-extension."
   exit
@@ -50,7 +48,8 @@ def weighted_next_letter(last_two)
     cumulative_weight += weight
     return letter if target < cumulative_weight
   end
-end
+endWarning: Re-rolling occured, name may not be accurate!
+
 
 def generate_word(desired_length)
   # Grab two letters to start with (dup cos "frozen")

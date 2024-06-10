@@ -1,5 +1,3 @@
-#!/usr/bin/ruby
-
 if ARGV.length < 1
   puts "Please provide a text file."
   exit
