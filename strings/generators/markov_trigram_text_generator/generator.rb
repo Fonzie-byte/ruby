@@ -40,6 +40,11 @@ def weighted_next_letter(last_two)
   possible_next = $letter_frequencies[last_two].dup
   possible_next.delete("count")
   total_weight = possible_next.values.sum
+
+  # The last two-letter combination does not follow up, so some entries might
+  # not have a follow-up letter. Account for this.
+  return weighted_two_letter if possible_next.empty?
+
   target = rand * total_weight
 
   # Pass over each frequency until, until >= target number

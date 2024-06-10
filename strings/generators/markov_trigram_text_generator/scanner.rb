@@ -31,6 +31,14 @@ File.open(file_name).each do |line|
         letter_frequencies[first_two].fetch(third, 0) + 1
 
     end
+
+    last_two = word[-2..-1]
+
+    letter_frequencies[last_two] = letter_frequencies
+      .fetch(last_two, {"count" => 0})
+
+    letter_frequencies[last_two]["count"] =
+      letter_frequencies[last_two]["count"] + 1
   end
 end
 
