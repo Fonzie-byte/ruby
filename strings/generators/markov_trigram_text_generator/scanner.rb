@@ -4,7 +4,7 @@ if ARGV.length < 1
 end
 
 file_name = ARGV[0]
-lengths = {}
+word_lengths = {}
 letter_frequencies = {}
 
 # Run lazy-loaded through the file
@@ -13,7 +13,7 @@ File.open(file_name).each do |line|
   line.downcase.scan(/[a-z]+/).each do |word|
     # Count how often words of this length showed up
     word_length = word.length
-    lengths[word_length] = lengths.fetch(word_length, 0) + 1
+    word_lengths[word_length] = word_lengths.fetch(word_length, 0) + 1
 
     # Run through each letter, expect the last two as we're going through them by groups of three.
     (word_length - 2).times do |index|
@@ -43,6 +43,6 @@ File.open(file_name).each do |line|
 end
 
 File.open(file_name + "_results_" + Time.now.to_i.to_s + ".rb", 'w') do |file|
-  file.write("$lengths = " + lengths.to_s + "\n")
+  file.write("$word_lengths = " + word_lengths.to_s + "\n")
   file.write("$letter_frequencies = " + letter_frequencies.to_s + "\n")
 end

@@ -7,12 +7,12 @@ require "./#{ARGV[0]}"
 
 def weighted_random_length
   # Roll randomly on total weight of word lengths
-  total_weight = $lengths.values.sum
+  total_weight = $word_lengths.values.sum
   target = rand * total_weight
 
   # Pass over each frequency, until >= target number
   cumulative_weight = 0
-  $lengths.each do |length, weight|
+  $word_lengths.each do |length, weight|
     cumulative_weight += weight
     return length if target < cumulative_weight
   end

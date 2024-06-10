@@ -1,0 +1,2 @@
+$word_lengths = {3=>5, 4=>3}
+$letter_frequencies = {"ba"=>{"count"=>1, "i"=>1}, "ai"=>{"count"=>2}, "ch"=>{"count"=>1, "a"=>1}, "ha"=>{"count"=>1, "o"=>1}, "ao"=>{"count"=>2}, "ji"=>{"count"=>1, "a"=>1}, "ia"=>{"count"=>2, "o"=>1}, "le"=>{"count"=>1, "i"=>1}, "ei"=>{"count"=>2}, "me"=>{"count"=>1, "i"=>1}, "qi"=>{"count"=>1, "a"=>1}, "sh"=>{"count"=>1, "u"=>1}, "hu"=>{"count"=>1, "i"=>1}, "ui"=>{"count"=>1}, "ta"=>{"count"=>1, "i"=>1}}
