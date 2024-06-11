@@ -1,3 +1,5 @@
+require 'securerandom'
+
 level = 1
 
 def to_dozenal(dec)
@@ -22,7 +24,7 @@ while true
 
   min = 1
   max = 144
-  secret_number = rand(min..max)
+  secret_number = SecureRandom.rand(min..max)
   guess = -1
 
   puts "Round #{level}"

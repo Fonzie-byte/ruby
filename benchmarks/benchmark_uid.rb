@@ -1,5 +1,5 @@
-require 'Benchmark'
-require 'SecureRandom'
+require 'benchmark'
+require 'securerandom'
 
 def uid()
   decTime = Time.now.to_i

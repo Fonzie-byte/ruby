@@ -1,3 +1,5 @@
+require 'securerandom'
+
 level = 1
 
 while true
@@ -5,11 +7,11 @@ while true
 
   min = 1
   max = 100
-  secret_number = rand(min..max)
+  secret_number = SecureRandom.rand(min..max)
   guess = -1
 
   puts "Round #{level}"
-  puts "I have a number of minimal #{min} and maximum #{max} in mind, you have #{chances} chances to guess it..!"
+  puts "I have a number of minimum #{min} and maximum #{max} in mind, you have #{chances} chances to guess it..!"
 
   while guess != secret_number && chances > 0
     puts "You have #{chances} chances left, which number do you guess?"
