@@ -1,0 +1,10 @@
+*
+
+!.gitignore
+!florence_nightingale_clean.txt
+!florence_nightingale_clean.txt_results_1718035383_formatted.rb
+!florence_nightingale_clean.txt_results_1718035383.rb
+!generator.rb
+!README.md
+!sample_output.txt
+!scanner.rb
