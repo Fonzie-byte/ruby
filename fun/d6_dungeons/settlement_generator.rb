@@ -1,4 +1,6 @@
-type = case rand(1..6)
+require 'securerandom'
+
+type = case SecureRandom.rand(1..6)
 when 1..3
   "village"
 when 4..5
@@ -11,11 +13,11 @@ end
 
 population = case type
 when "village"
-  rand(1..6) * 10 + 30
+  SecureRandom.rand(1..6) * 10 + 30
 when "town"
-  rand(1..6) * 100 + 500
+  SecureRandom.rand(1..6) * 100 + 500
 when "city"
-  rand(1..6) * 1000 + 7000
+  SecureRandom.rand(1..6) * 1000 + 7000
 else
   0
 end
@@ -24,9 +26,9 @@ service_points = case type
 when "village"
   1
 when "town"
-  (rand(1..6) / 3.0).ceil + 2
+  (SecureRandom.rand(1..6) / 3.0).ceil + 2
 when "city"
-  (rand(1..6) / 2.0).ceil + 7
+  (SecureRandom.rand(1..6) / 2.0).ceil + 7
 else
   0
 end
@@ -46,7 +48,7 @@ end
 service_points -= services.length
 
 service_points.times do
-  services.push case rand(1..6) + rand(1..6)
+  services.push case SecureRandom.rand(1..6) + SecureRandom.rand(1..6)
   when 2
     if !services.include?("fast travel")
       "fast travel"
@@ -64,7 +66,7 @@ service_points.times do
   when 4
     "a criminal underground"
   when 5
-  	"a guild hall"
+    "a guild hall"
   when 6
     if !services.include?("a general smith")
       "a general smith"

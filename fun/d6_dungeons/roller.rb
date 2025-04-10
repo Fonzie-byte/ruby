@@ -1,3 +1,5 @@
+require 'securerandom'
+
 =begin
   Call this script with a single integer (0 or more) for the amount of dice you
   roll.
@@ -14,7 +16,7 @@ end
 
 # No points in skill? 1dd
 if skill_level === 0
-  puts "You rolled #{rand(1..6) -1}"
+  puts "You rolled #{SecureRandom.rand(1..6) -1}"
   exit
 end
 
@@ -28,7 +30,7 @@ ones = 0
 # For each die...
 skill_level.times do
   # Roll 1..6
-  result = rand(1..6)
+  result = SecureRandom.rand(1..6)
   # Add it to the list of outcomes...
   outcomes.push(result)
 
