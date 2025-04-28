@@ -45,67 +45,92 @@ when "city"
 else   # inc. village
   Array.new
 end
-service_points -= services.length
 
-service_points.times do
+while services.length < service_points do
   services.push case SecureRandom.rand(1..6) + SecureRandom.rand(1..6)
   when 2
     if !services.include?("fast travel")
       "fast travel"
-    else
+    elsif !services.include?("a teleportation circle")
       "a teleportation circle"
+    else
+      next
     end
   when 3
     if !services.include?("a militia")
       "a militia"
     elsif !services.include?("barracks")
       "barracks"
-    else
+    elsif !services.include?("fortifying walls")
       "fortifying walls"
+    else
+      next
     end
   when 4
+    if services.include?("a criminal underground")
+      next
+    end
     "a criminal underground"
   when 5
+    if services.include?("a guild hall")
+      next
+    end
     "a guild hall"
   when 6
     if !services.include?("a general smith")
       "a general smith"
     elsif !services.include?("a blacksmith")
       "a blacksmith"
-    else
+    elsif !services.include?("a gunsmith")
       "a gunsmith"
+    else
+      next
     end
   when 7
+    if services.include?("an inn")
+      next
+    end
     "an inn"
   when 8
     if !services.include?("a travelling merchant")
       "a travelling merchant"
-    else
+    elsif !services.include?("the travelling merchant has some magical items")
       "the travelling merchant has some magical items"
+    else
+      next
     end
   when 9
     if !services.include?("a church")
       "a church"
     elsif !services.include?("the church also provides divination")
       "the church also provides divination"
-    else
+    elsif !services.include?("the church also provides resurrection")
       "the church also provides resurrection"
+    else
+      next
     end
   when 10
     if !services.include?("a library")
       "a library"
     elsif !services.include?("the library also gives classes")
       "the library also gives classes"
-    else
+    elsif !services.include?('the library also has a "forbidden" section')
       'the library also has a "forbidden" section'
+    else
+      next
     end
   when 11
     if !services.include?("a wizard tower")
       "a wizard tower"
-    else
+    elsif !services.include?("the wizard tower has a laboratory")
       "the wizard tower has a laboratory"
+    else
+      next
     end
   when 12
+    if services.include?("a noble house")
+      next
+    end
     "a noble house"
   end
 end

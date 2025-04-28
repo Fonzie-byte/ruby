@@ -13,7 +13,9 @@ class Array
 end
 
 if !ARGV[0].nil?
-  puts ARGV[0].chars.all_possibilities
+  from = (ARGV[1] || "1").to_i
+  to = (ARGV[2] || ARGV[0].length.to_s).to_i
+  puts ARGV[0].chars.all_possibilities(from, to)
 else
   puts ["A", "B", "X", "Y", "L", "R"].all_possibilities(2, 3)
 end
